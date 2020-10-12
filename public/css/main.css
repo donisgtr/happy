@@ -1,0 +1,65 @@
+/* o que é uma regra css? 
+body/Seletor {
+    color/atributo: red/valor;
+}
+
+Cascata é voce imaginar uma caichoeira, a importante da regra sempre sera a ultima adicionada, se eu tiver duas tags com o mesmo atributo ele vai considerar o ultimo como o valor a ser usado.
+
+Especifidade: eu posso colocar o style direto dentro da tag HTML style="color: yellow;" essa é a especifidade é amais forte, o segundo mais forte é no mesmo HTML.
+
+<style>
+    body{
+        color: red;
+    }
+</style> esse daqi tem mais força que o outro que esta em um aruivo externo.
+
+a não ser que eu coloque o link depois desse style de cima porque ele vai sobrepor esse anterior ai em cima.
+
+Existem varios tipos de seletores
+
+# é do tipo ID, procurar algo que tem o ID com esse nome
+
+!important é o mais forte de todos, mas não usamos isso.
+
+funcoes em CSS são rgb() escritas com abre e fecha paratenses.
+
+box model e o conceito de caixas do css., toda caixa tem propriedades, como preenchimento(  m), 
+
+*/
+
+*/* selecto univesal */ {
+  margin: 0;
+  padding: 0;
+}
+
+#body {
+  height: 100vh; /* faz com que ele ocupe toda a tela 100% da tela */
+  color: white;
+}
+
+:root {
+  /* sabendo que 100 ja é 16px que é o padrão do mavegador eu quero deixar o padrão em 10px mas em porcentagem que é 62.5% */
+  font-size: 62.5%;
+}
+
+body,
+input,
+button,
+textarea {
+  /*  font-weight: 400;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;  // se ele não achar nunito vai usar sans-serif 
+    line-height: 1;
+    // essa propriedade abaixo substitui tudo configurado a cima 
+*/
+  font: 400 1.8rem/1 "Nunito", sans-serif;
+}
+
+/* unidade de meida REM e EM 
+
+REM - o rem pega sempre do HTML ou seja o root element ai eu seto o :root.
+
+EM - busca no elemento pai o valor e calcula 
+1 em é 16px
+
+*/
