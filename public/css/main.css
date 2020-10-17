@@ -1,3 +1,45 @@
+
+
+*/* selecto univesal */ {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#body {
+  height: 100vh; /* faz com que ele ocupe toda a tela 100% da tela */
+  color: white;
+}
+
+:root {
+  /* sabendo que 100 ja é 16px que é o padrão do mavegador eu quero deixar o padrão em 10px mas em porcentagem que é 62.5% */
+  font-size: 62.5%;
+}
+
+body,
+input,
+button,
+textarea {
+
+  font: 400 1.8rem/1 "Nunito", sans-serif;
+
+    /*  font-weight: 400;
+    font-size: 18px;
+    font-family: 'Nunito', sans-serif;  // se ele não achar nunito vai usar sans-serif 
+    line-height: 1;
+    // essa propriedade abaixo substitui tudo configurado a cima 
+*/
+}
+
+/* unidade de meida REM e EM 
+
+REM - o rem pega sempre do HTML ou seja o root element ai eu seto o :root.
+
+EM - busca no elemento pai o valor e calcula 
+1 em é 16px
+
+*/
+
 /* o que é uma regra css? 
 body/Seletor {
     color/atributo: red/valor;
@@ -24,42 +66,5 @@ Existem varios tipos de seletores
 funcoes em CSS são rgb() escritas com abre e fecha paratenses.
 
 box model e o conceito de caixas do css., toda caixa tem propriedades, como preenchimento(  m), 
-
-*/
-
-*/* selecto univesal */ {
-  margin: 0;
-  padding: 0;
-}
-
-#body {
-  height: 100vh; /* faz com que ele ocupe toda a tela 100% da tela */
-  color: white;
-}
-
-:root {
-  /* sabendo que 100 ja é 16px que é o padrão do mavegador eu quero deixar o padrão em 10px mas em porcentagem que é 62.5% */
-  font-size: 62.5%;
-}
-
-body,
-input,
-button,
-textarea {
-  /*  font-weight: 400;
-    font-size: 18px;
-    font-family: 'Nunito', sans-serif;  // se ele não achar nunito vai usar sans-serif 
-    line-height: 1;
-    // essa propriedade abaixo substitui tudo configurado a cima 
-*/
-  font: 400 1.8rem/1 "Nunito", sans-serif;
-}
-
-/* unidade de meida REM e EM 
-
-REM - o rem pega sempre do HTML ou seja o root element ai eu seto o :root.
-
-EM - busca no elemento pai o valor e calcula 
-1 em é 16px
 
 */

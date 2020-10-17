@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!-- atributo -->
+<html lang="pt_BR">
+  <head>
+    <!-- head e a tag de configuração do meu arquivo html-->
+    <meta charset="UTF-8" />
+    <!-- tag meta e responsavel por metadados, são configuraçoes do meu document -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Localize um orfanato | Happy</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+
+    <link rel="icon" href="./public/images/logo-icon.png" />
+
+    <link rel="stylesheet" href="./public/css/main.css" />
+    <link rel="stylesheet" href="./public/css/animations.css" />
+    <link rel="stylesheet" href="./public/css/page-orphaneges.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <!-- inserir o css no meu arquivo HTML -->
+    <!-- root e uma pasta/diretorio raiz ./ -->
+  </head>
+  <body id="body">
+    <div id="page-orphaneges">
+      <aside class="animete-right">
+        <header>
+          <img src="./public/images/map-marker.svg" alt="Happy" />
+          <h2>Escolha um orfanato no mapa</h2>
+          <p>Muitas crianças estão esperando sua visita :)</p>
+        </header>
+        <footer>
+          <strong>Rio do Sul</strong>
+          <p>Santa Catarina</p>
+        </footer>
+      </aside>
+      <div id="mapid"></div>
+      <a
+        href="create-orphanege"
+        class="create-orphanege"
+        title="Cadastre um orfanato"
+      >
+        <img src="./public/images/plus.svg" alt="Criar Orfanato" />
+      </a>
+    </div>
+    <script src="./public/scripts/orphaneges.js"></script>
+  </body>
+</html>
+<!-- Como fazer comentarios em html? crt + shit + a 
+    O que é HTML?
+        Hypertext = Hipertexto ou texto que possuiem links.
+        Exemplo: textos de livros de revistas e outras coisas do mundo fisico não tem links, agora no whatsapp voce clica em um link e ele te leva para outra pagina outro lugar.
+        Exemplo no html <a href="google.com"></a>
+    Markup
+        Marcação <tags>
+    
+    Language
+        Lingaguem
+        Não é lingaguem de programação, e apenas uma ligaguem como marcar os textos com tags
+-->
