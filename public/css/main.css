@@ -9,6 +9,7 @@
 #body {
   height: 100vh; /* faz com que ele ocupe toda a tela 100% da tela */
   color: white;
+  background: #Ebf2f5;
 }
 
 :root {
