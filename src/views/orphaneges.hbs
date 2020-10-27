@@ -22,11 +22,11 @@
       crossorigin=""
     ></script>
 
-    <link rel="icon" href="./public/images/logo-icon.png" />
+    <link rel="icon" href="/images/logo-icon.png" />
 
-    <link rel="stylesheet" href="./public/css/main.css" />
-    <link rel="stylesheet" href="./public/css/animations.css" />
-    <link rel="stylesheet" href="./public/css/page-orphaneges.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/animations.css" />
+    <link rel="stylesheet" href="/css/page-orphaneges.css" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
@@ -39,7 +39,7 @@
     <div id="page-orphaneges">
       <aside class="animete-right">
         <header>
-          <img src="./public/images/map-marker.svg" alt="Happy" />
+          <img src="/images/map-marker.svg" alt="Happy" />
           <h2>Escolha um orfanato no mapa</h2>
           <p>Muitas crianças estão esperando sua visita :)</p>
         </header>
@@ -49,15 +49,26 @@
         </footer>
       </aside>
       <div id="mapid" class="animation-apper"></div>
+    <div class="orphaneges">
+      {{#each orphaneges}}
+        <span hidden 
+        data-id="{{this.id}}"
+        data-name="{{this.name}}"
+        data-lat="{{this.lat}}"
+        data-lng="{{this.lng}}"     
+        ></span>
+      {{/each}}
+    </div>
+
       <a
         href="create-orphanege"
         class="create-orphanege"
         title="Cadastre um orfanato"
       >
-        <img src="./public/images/plus.svg" alt="Criar Orfanato" />
+        <img src="/images/plus.svg" alt="Criar Orfanato" />
       </a>
     </div>
-    <script src="./public/scripts/orphaneges.js"></script>
+    <script src="/scripts/orphaneges.js"></script>
   </body>
 </html>
 <!-- Como fazer comentarios em html? crt + shit + a 
