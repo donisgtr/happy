@@ -1,11 +1,11 @@
 /* como faz para importar um pacote do npm? */
-const Database = require('sqlite-async');
 
 /* estou pedindo para o meu banco de dados abra  o meu __dirname 
 o meu diretorio atual e nesse diretorio crie uma arquivo chamado  e criar esse arquivo leva um tempo, se não existir, essa funçao open tem essa inteligecia, porem o Javascript executa linha a linha, e eu so posso continuar depois que eu abrir meu banco de dados. no caso do Objeto OPEN ele tem um PROMISSE */
 
 /* o que faz esse then() ? */
 
+const Database = require('sqlite-async');
 
 function execute(db) {
     /* aqui vamos escrever o SQL igual escreveria no ORACLE */

@@ -162,8 +162,52 @@ main {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
+    line-height: 2;  
 }
 
+.primary-button {
+    margin-top: 6.4rem;
+    width: 100%;
+    height: 6.4rem;
+    border: 0;
+    cursor: pointer;
+    background: #3cdc8c;
+
+    text-decoration: none;
+
+    border-radius: 2rem;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: background-color .2s;
+}
+
+.open-details .open-on-weekends {
+    border-radius: 20px; 
+}
+
+.open-details .open {
+    background: linear-gradient(154.16deg, #edfff6 7.85%, #FFFFFF 91.03%);
+    border: 1px solid #a1e9c5;
+    color: #37c77f;
+}
+
+.open-details .closed {
+    background: linear-gradient(154.16deg, #fcf0f4 7.85%, #FFFFFF 91.03%);
+    border: 1px solid #ffbcd4;
+    color: #ff999D;
+}
+
+.primary-button:hover {
+    background: #36cf82;
+}
+
+.primary-button img {
+    margin-right: 1.6rem;
+}
 
 .open-details div {
     padding: 3.2rem 2.4rem;
@@ -178,40 +222,5 @@ main {
     background: linear-gradient(149.97deg, #e6f7fb 8.13%, #FFFFFF 92.67%);
     border: 1px solid #b3dae2;
     border-radius: 20px;
-
     color: #5c8599;
-}
-
-.open-details .open-on-weekends {
-    background: linear-gradient(154.16deg, #edfff6 7.85%, #FFFFFF 91.03%);
-    border: 1px solid #a1e9c5;
-    border-radius: 20px;
-
-    color: #37c77f;
-}
-
-.primary-button {
-    margin-top: 6.4rem;
-    width: 100%;
-    height: 6.4rem;
-    border: 0;
-    cursor: pointer;
-    background: #3cdc8c;
-
-    border-radius: 2rem;
-    color: white;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: background-color .2s;
-}
-
-.primary-button:hover {
-    background: #36cf82;
-}
-
-.primary-button img {
-    margin-right: 1.6rem;
 }

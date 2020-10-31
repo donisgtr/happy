@@ -1,140 +1,112 @@
 <!DOCTYPE html>
 <!-- atributo -->
 <html lang="pt_BR">
-  <head>
-    <!-- head e a tag de configuração do meu arquivo html-->
-    <meta charset="UTF-8" />
-    <!-- tag meta e responsavel por metadados, são configuraçoes do meu document -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lar das Meninas | Happy</title>
 
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-      crossorigin=""
-    />
+<head>
+  <!-- head e a tag de configuração do meu arquivo html-->
+  <meta charset="UTF-8" />
+  <!-- tag meta e responsavel por metadados, são configuraçoes do meu document -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{orphanege.name}} | Happy</title>
 
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script
-      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-      crossorigin=""
-    ></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin="" />
 
-    <link rel="icon" href="/images/logo-icon.png" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
 
-    <link rel="stylesheet" href="/css/main.css" />
-    <link rel="stylesheet" href="/css/animations.css" />
-    <link rel="stylesheet" href="/css/page-orphanege.css" />
+  <link rel="icon" href="/images/logo-icon.png" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <!-- inserir o css no meu arquivo HTML -->
-    <!-- root e uma pasta/diretorio raiz ./ -->
-  </head>
-  <body id="body">
-    <div id="page-orphanege">
-      <aside class="animete-right sidebar">
-      
-        <img src="/images/map-marker.svg" alt="Happy">
-      
-        <footer>
-          <button onclick="history.back()">
-            <img src="/images/arrow-back.svg" alt="Voltar">
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/animations.css" />
+  <link rel="stylesheet" href="/css/page-orphanege.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <!-- inserir o css no meu arquivo HTML -->
+  <!-- root e uma pasta/diretorio raiz ./ -->
+</head>
+
+<body id="body">
+  <div id="page-orphanege">
+    <aside class="animete-right sidebar">
+
+      <img src="/images/map-marker.svg" alt="Happy">
+
+      <footer>
+        <button onclick="history.back()">
+          <img src="/images/arrow-back.svg" alt="Voltar">
+        </button>
+      </footer>
+    </aside>
+
+    <main class="animete.apper  with-sidebar">
+      <div class="orphanege-details">
+        {{!-- Primeira imagem em destaque --}}
+        <img src="{{orphanege.firstImagem}}" alt="{{orphanege.imagens}}" />
+        <div class="images">
+
+          {{#each orphanege.imagens}}
+          <button onclick="selectImage(event)" class="active" type="button">
+            <img src="{{this}}" al t="{{orphanege.name}}" />
           </button>
-        </footer>
-      </aside>
-      
-      <main class="animete.apper  with-sidebar">
-        <div class="orphanege-details">
-          <img src="/images/home.jpg" alt="Lar das Meninas" />
-          <div class="images">
-            <button onclick="selectImage(event)" class="active" type="button">
-              <img src="https://source.unsplash.com/random?id=1" alt="Lar das Meninas" />
-            </button>
+          {{/each}}
 
-            <button onclick="selectImage(event)" type="button">
-              <img src="https://source.unsplash.com/random?id=2" alt="Lar das Meninas" />
-            </button>
-
-            <button onclick="selectImage(event)" type="button">
-              <img src="https://source.unsplash.com/random?id=3" alt="Lar das Meninas" />
-            </button>
-
-            <button onclick="selectImage(event)" type="button">
-              <img src="https://source.unsplash.com/random?id=4" alt="Lar das Meninas" />
-            </button>
-
-            <button onclick="selectImage(event)" type="button">
-              <img src="https://source.unsplash.com/random?id=5" alt="Lar das Meninas" />
-            </button>
-
-            <button onclick="selectImage(event)" type="button">
-              <img src="https://source.unsplash.com/random?id=6" alt="Lar das Meninas" />
-            </button>
-          </div>
-
-          <div class="orphanege-details-content">
-            <h1>Lar das Meninas</h1>
-
-            <p>
-              Presta assistencia a crianças de 06 a 15 anos que se encontre em
-              situação de risco e/ou vulnerabilidade social
-            </p>
-
-            <div class="map-container">
-              <div id="mapid"></div>
-              <footer>
-                <a href="">Ver Rotas no Google Maps</a>
-              </footer>
-            </div>
-
-            <hr />
-
-            <h2>Instruções para visitas</h2>
-            <p>
-              Venha como se sentir a vontade e traga muito amor e paciência para
-              dar.
-            </p>
-
-            <div class="open-details">
-              <div class="hour">
-                <img src="/images/clock.svg" alt="Horarios" />
-                Horário de visitas Das 18h até 8h
-              </div>
-              <div class="open-on-weekends">
-                <img src="/images/info.svg" alt="Informações" />
-                Atendemos fim de semana
-              </div>
-            </div>
-
-            <button class="primary-button" type="button">
-              <img
-                src="/images/whatsapp.svg"
-                alt="Chamar no whatsapp"
-              />
-              Entre em contato
-            </button>
-          </div>
         </div>
-      </main>
-      ]
-    </div>
-    <script src="/scripts/orphanege.js"></script>
-  </body>
+
+        <div class="orphanege-details-content">
+          <h1>{{orphanege.name}}</h1>
+          <p>{{orphanege.about}}</p>
+
+          <div class="map-container">
+            <div id="mapid"></div>
+            <span data-lat="{{orphanege.lat}}" data-lng="{{orphanege.lng}}"></span>
+            <footer>
+
+              <a target="_blank" 
+              href="https://maps.google.com/mobile?q={{orphanege.lat}},{{orphanege.lng}}&z=15">
+                Ver todas no Google
+              </a>
+            </footer>
+          </div>
+
+          <hr />
+
+          <h2>Instruções para visitas</h2>
+          <p>{{orphanege.instructions}}</p>
+
+          <div class="open-details">
+            <div class="hour">
+              <img src="/images/clock.svg" alt="Horarios" />
+              {{orphanege.opening_hours }}
+            </div>
+
+            {{#if orphanege.open_on_weekends }}
+            <div class="open-on-weekends open">
+              <img src="/images/info.svg" alt="Informações" />
+              Atendemos fim de semana
+            </div>
+            {{else}}
+            <div class="open-on-weekends closed">
+              <img src="/images/info-red.svg" alt="Informações" />
+              Não atendemos fim de semana
+            </div>
+            {{/if}}
+          </div>
+
+          <a  
+          target="_blank"
+          href="https://api.whatsapp.com/send?1=pt_BR&phone=5511973993958&text=Oi, quero conversar" class="primary-button" type="button">
+            <img src="/images/whatsapp.svg" alt="Chamar no whatsapp" />
+            Entre em contato
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="/scripts/orphanege.js"></script>
+</body>
+
 </html>
-<!-- Como fazer comentarios em html? crt + shit + a 
-    O que é HTML?
-        Hypertext = Hipertexto ou texto que possuiem links.
-        Exemplo: textos de livros de revistas e outras coisas do mundo fisico não tem links, agora no whatsapp voce clica em um link e ele te leva para outra pagina outro lugar.
-        Exemplo no html <a href="google.com"></a>
-    Markup
-        Marcação <tags>
-    
-    Language
-        Lingaguem
-        Não é lingaguem de programação, e apenas uma ligaguem como marcar os textos com tags
--->
